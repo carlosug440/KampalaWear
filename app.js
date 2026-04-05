@@ -30,4 +30,4 @@ function showProducts() {
 
         productList.appendChild(productDiv);
     });
-                     }
+            }
