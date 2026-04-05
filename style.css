@@ -1,17 +1,3 @@
-/* General body styling */
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f7f7f7;
-    color: #333;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #222;
-}
-
 /* Product list container */
 #product-list {
     display: flex;
@@ -26,21 +12,22 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 15px;
-    width: 100%;           /* full width on small screens */
-    max-width: 300px;      /* max width for larger screens */
+    width: 95%;         /* nearly full width on mobile */
+    max-width: 300px;   /* limit width on larger screens */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.2s;
 }
 
 .product:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* Product images */
 .product-img {
     width: 100%;
-    height: 200px;
+    height: auto;       /* let height adjust automatically */
+    aspect-ratio: 1;    /* maintain square aspect ratio */
     object-fit: cover;
     border-radius: 8px;
 }
@@ -86,9 +73,10 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Responsive tweaks */
+/* Optional: slightly larger buttons on mobile */
 @media (max-width: 600px) {
-    .product {
-        width: 90%; /* nearly full width on small screens */
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
     }
-}
+    } 
