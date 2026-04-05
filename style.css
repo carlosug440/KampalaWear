@@ -17,8 +17,8 @@
     transition: transform 0.2s;
 
     /* Flex property: grow, shrink, base width */
-    flex: 1 1 300px;  /* grow to fill space, shrink if needed, base width 300px */
-    max-width: 300px; /* ensures cards don't get wider than 300px on desktop */
+    flex: 1 1 300px;   /* base width 300px, can grow/shrink */
+    max-width: 300px;  /* prevents cards from getting too wide on desktop */
 }
 
 .product:hover {
@@ -55,4 +55,12 @@
 .cart-total {
     font-weight: bold;
     margin-top: 10px;
-} 
+}
+
+/* Media query for small screens (mobile) */
+@media (max-width: 500px) {
+    .product {
+        flex: 1 1 95%;  /* fill ~95% of the screen width */
+        max-width: none; /* remove max-width restriction */
+    }
+    }
