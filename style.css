@@ -1,8 +1,8 @@
 /* Product list container */
 #product-list {
     display: flex;
-    flex-wrap: wrap; /* allow products to wrap */
-    gap: 20px; /* spacing between products */
+    flex-wrap: wrap;       /* allow cards to wrap */
+    gap: 20px;             /* space between cards */
     justify-content: center;
 }
 
@@ -12,11 +12,13 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 15px;
-    width: 95%;         /* nearly full width on mobile */
-    max-width: 300px;   /* limit width on larger screens */
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.2s;
+
+    /* Flex property: grow, shrink, base width */
+    flex: 1 1 300px;  /* grow to fill space, shrink if needed, base width 300px */
+    max-width: 300px; /* ensures cards don't get wider than 300px on desktop */
 }
 
 .product:hover {
@@ -26,27 +28,9 @@
 /* Product images */
 .product-img {
     width: 100%;
-    height: auto;       /* let height adjust automatically */
-    aspect-ratio: 1;    /* maintain square aspect ratio */
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
-}
-
-/* Buttons */
-button {
-    padding: 8px 12px;
-    margin-top: 10px;
-    cursor: pointer;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background-color 0.2s;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
 
 /* Cart styling */
@@ -71,12 +55,4 @@ button:hover {
 .cart-total {
     font-weight: bold;
     margin-top: 10px;
-}
-
-/* Optional: slightly larger buttons on mobile */
-@media (max-width: 600px) {
-    button {
-        font-size: 16px;
-        padding: 10px 15px;
-    }
-    } 
+} 
